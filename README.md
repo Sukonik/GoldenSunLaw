@@ -179,9 +179,9 @@ West Coast technology, consumer products, investment, hospitality, and real esta
 ### Honolulu
 Hospitality, resort development, tourism, Asia-Pacific investment, and strategic real estate.
 
-### Clearwater · One Clearwater Tower
-**600 Cleveland St, Clearwater, FL 33755**  
-Florida real estate, hospitality, REIT, investment, and development platform.
+### Clearwater Beach · Mandalay Avenue
+**403B Mandalay Ave, Clearwater Beach, FL 33767**  
+Florida hospitality, resort development, real estate, REIT, investment, and coastal development platform.
 
 Additional markets may include **Tokyo, San Francisco, Singapore, and Miami** without initially presenting each as a formal office.
 
