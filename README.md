@@ -15,6 +15,18 @@ SUN is a fictional global law firm created to explore how a modern legal brand c
 
 ---
 
+## Current Design System
+
+- **Default theme:** Hudson Cobalt
+- **Headline type:** Inter Tight
+- **Body / UI type:** Inter
+- **Theme control:** persistent `Change Theme` picker with Hudson Cobalt, Pacific Sapphire, Midnight Indigo, Emerald, and Graphite
+- **Visual direction:** bold architectural/technology gradients, reduced card chrome, strong responsive typography, and selective location imagery rather than image-heavy homepage decoration
+
+The selected theme is persisted in local storage and the site remains fully usable without changing the underlying content structure.
+
+---
+
 ## Brand
 
 The public-facing identity is deliberately simple:
@@ -171,18 +183,25 @@ AI is not treated as a novelty practice. It is intended to operate horizontally 
 ### New York · 10 Hudson Yards
 Global headquarters. Management, real estate, corporate transactions, litigation, investment, finance, and infrastructure.
 
-### Seoul
+### Seoul · Parc.1 Tower 1
+**108 Yeoui-daero, Yeongdeungpo-gu, Seoul 07335**  
 Asia-Pacific technology headquarters. Technology transactions, IP, litigation, Korean corporate relationships, semiconductors, and outbound investment.
 
-### Los Angeles
+### Los Angeles · Century City
+**1901 Avenue of the Stars, Los Angeles, CA 90067**  
 West Coast technology, consumer products, investment, hospitality, and real estate.
 
-### Honolulu
+### Honolulu · First Hawaiian Center
+**999 Bishop Street, Honolulu, HI 96813**  
 Hospitality, resort development, tourism, Asia-Pacific investment, and strategic real estate.
 
 ### Clearwater Beach · Wyndham Grand Clearwater Beach
 **100 Coronado Drive, Clearwater Beach, FL 33767**  
 Fictional SUN resident counsel suite focused on hospitality, resort development, real estate, REIT, investment, and coastal development.
+
+### San Diego / Solana Beach · The Cove
+**120 S Sierra Ave, Solana Beach, CA 92075**  
+Coastal technology office focused on founders, consumer technology, life sciences, venture work, and visiting Asia-Pacific teams.
 
 Additional markets may include **Tokyo, San Francisco, Singapore, and Miami** without initially presenting each as a formal office.
 

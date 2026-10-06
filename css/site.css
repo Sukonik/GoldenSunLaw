@@ -572,3 +572,402 @@ html[data-firm-profile="small"] .office-grid { grid-template-columns: repeat(aut
     align-items: start;
   }
 }
+
+
+/* ==========================================================================
+   SUN V2 — Hudson Cobalt + Inter
+   Visual thesis: institutional law with architectural/technology energy.
+   ========================================================================== */
+
+:root,
+html[data-theme="cobalt"] {
+  --ink: #07111f;
+  --paper: #f3f7fb;
+  --paper-strong: #ffffff;
+  --stone: #dbe7f2;
+  --muted: #607087;
+  --line: rgba(7, 17, 31, 0.16);
+  --accent: #0a4fb3;
+  --accent-strong: #168bff;
+  --accent-light: #62c3ff;
+  --hero-gradient: linear-gradient(132deg, #061a33 0%, #0a4fb3 44%, #168bff 75%, #62c3ff 112%);
+  --serif: "Inter Tight", "Inter", Arial, sans-serif;
+  --sans: "Inter", Arial, sans-serif;
+}
+
+html[data-theme="pacific"] {
+  --ink: #071720;
+  --paper: #f1f9fb;
+  --paper-strong: #ffffff;
+  --stone: #d8edf1;
+  --muted: #57717a;
+  --line: rgba(7, 23, 32, 0.16);
+  --accent: #006aa6;
+  --accent-strong: #00a7d8;
+  --accent-light: #7de3f2;
+  --hero-gradient: linear-gradient(132deg, #031d2e 0%, #006aa6 48%, #00a7d8 78%, #7de3f2 120%);
+}
+
+html[data-theme="midnight"] {
+  --ink: #0d1121;
+  --paper: #f5f6fb;
+  --paper-strong: #ffffff;
+  --stone: #e0e3f2;
+  --muted: #656b83;
+  --line: rgba(13, 17, 33, 0.16);
+  --accent: #263b8f;
+  --accent-strong: #596dff;
+  --accent-light: #9da9ff;
+  --hero-gradient: linear-gradient(132deg, #080d22 0%, #263b8f 48%, #596dff 80%, #9da9ff 120%);
+}
+
+html[data-theme="emerald"] {
+  --ink: #081712;
+  --paper: #f3f8f6;
+  --paper-strong: #ffffff;
+  --stone: #d9e9e2;
+  --muted: #5e7169;
+  --line: rgba(8, 23, 18, 0.16);
+  --accent: #17654c;
+  --accent-strong: #208f69;
+  --accent-light: #72d6b2;
+  --hero-gradient: linear-gradient(132deg, #071a16 0%, #10543e 45%, #208f69 77%, #72d6b2 118%);
+}
+
+html[data-theme="graphite"] {
+  --ink: #101217;
+  --paper: #f4f5f7;
+  --paper-strong: #ffffff;
+  --stone: #e0e3e7;
+  --muted: #686f79;
+  --line: rgba(16, 18, 23, 0.17);
+  --accent: #343b47;
+  --accent-strong: #677384;
+  --accent-light: #aeb7c3;
+  --hero-gradient: linear-gradient(132deg, #090b10 0%, #242a33 47%, #596473 78%, #aeb7c3 122%);
+}
+
+body {
+  font-family: var(--sans);
+  font-feature-settings: "kern", "liga", "calt";
+}
+
+h1,
+h2,
+h3,
+.display,
+.section-title,
+.card__title,
+.practice-card__title,
+.person-card__initials,
+.person-card__name,
+.thesis__line,
+.detail-row__value,
+.site-footer__mark,
+.location-row__city {
+  font-family: var(--serif);
+  font-weight: 650;
+}
+
+.display {
+  font-weight: 800;
+  letter-spacing: -0.075em;
+}
+
+.section-title {
+  font-weight: 700;
+  letter-spacing: -0.052em;
+}
+
+.lede {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.hero {
+  position: relative;
+  background: var(--hero-gradient);
+  color: #fff;
+  border-bottom: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 80% 12%, rgba(255,255,255,.24), transparent 22%),
+    linear-gradient(115deg, transparent 0 62%, rgba(255,255,255,.08) 62.15%, transparent 62.3%);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .copy,
+.hero .hero__location {
+  color: rgba(255,255,255,.78);
+}
+
+.hero .text-link {
+  color: #fff;
+}
+
+.hero .eyebrow {
+  color: rgba(255,255,255,.84);
+}
+
+.site-header {
+  background: color-mix(in srgb, var(--paper-strong) 92%, transparent);
+  border-bottom-color: var(--line);
+}
+
+.brand__mark {
+  font-family: var(--serif);
+  font-weight: 800;
+  letter-spacing: -0.085em;
+}
+
+.card {
+  transition: transform .22s ease, background-color .22s ease, border-color .22s ease;
+}
+
+.card__link:hover {
+  transform: translateY(-2px);
+}
+
+.section--dark {
+  background: var(--ink);
+}
+
+/* Theme picker ----------------------------------------------------------- */
+
+.site-header__inner {
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.theme-control {
+  position: relative;
+  justify-self: end;
+  z-index: 95;
+}
+
+.theme-control__button {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  border: 1px solid var(--line);
+  background: var(--paper-strong);
+  color: var(--ink);
+  padding: .55rem .75rem;
+  font-size: .72rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+.theme-control__dot {
+  width: .72rem;
+  height: .72rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-light) 25%, transparent);
+}
+
+.theme-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + .55rem);
+  width: min(19rem, calc(100vw - 2rem));
+  padding: .7rem;
+  border: 1px solid var(--line);
+  background: var(--paper-strong);
+  box-shadow: 0 20px 60px rgba(7,17,31,.18);
+}
+
+.theme-menu__title {
+  padding: .45rem .5rem .7rem;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.theme-menu__choice {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.6rem 1fr;
+  align-items: center;
+  gap: .65rem;
+  border: 0;
+  background: transparent;
+  padding: .55rem .5rem;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.theme-menu__choice:hover,
+.theme-menu__choice[aria-pressed="true"] {
+  background: var(--stone);
+}
+
+.theme-menu__swatch {
+  width: 2.6rem;
+  height: 1.4rem;
+  border-radius: 999px;
+}
+
+/* Locations gallery ----------------------------------------------------- */
+
+.locations-intro {
+  padding-bottom: 2rem;
+}
+
+.location-gallery {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.location-card {
+  background: var(--paper);
+  min-width: 0;
+}
+
+.location-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--stone);
+}
+
+.location-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.96) contrast(1.03);
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .25s ease;
+}
+
+.location-card:hover .location-card__media img {
+  transform: scale(1.018);
+  filter: saturate(1.04) contrast(1.04);
+}
+
+.location-card__body {
+  padding: clamp(1.25rem, 3vw, 2.1rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.location-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.location-card__city {
+  font-family: var(--serif);
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+
+.location-card__label {
+  color: var(--accent);
+  font-size: .69rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+  white-space: nowrap;
+}
+
+.location-card__address {
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.location-card__description {
+  color: #465365;
+  max-width: 42rem;
+}
+
+.location-card__credit {
+  color: var(--muted);
+  font-size: .67rem;
+  line-height: 1.45;
+}
+
+.location-card__credit a {
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+
+.location-card--featured {
+  grid-column: 1 / -1;
+}
+
+.location-card--featured .location-card__media {
+  aspect-ratio: 16 / 7;
+}
+
+@media (min-width: 760px) {
+  .location-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .location-card--featured .location-card__body {
+    grid-template-columns: .75fr 1.25fr;
+    align-items: start;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .location-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .location-card--featured {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+  }
+
+  .location-card--featured .location-card__media {
+    aspect-ratio: auto;
+    min-height: 33rem;
+  }
+
+  .location-card--featured .location-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .theme-control__button span:last-child {
+    display: none;
+  }
+
+  .theme-control__button {
+    padding-inline: .7rem;
+  }
+
+  .site-header__inner {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+}
