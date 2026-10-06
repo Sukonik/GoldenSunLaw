@@ -17,7 +17,7 @@ SUN is a fictional global law firm created to explore how a modern legal brand c
 
 ## Current Design System
 
-- **Default theme:** Hudson Cobalt
+- **Default theme:** Cobalt
 - **Headline type:** Inter Tight
 - **Body / UI type:** Inter
 - **Theme control:** persistent `Change Theme` picker with Hudson Cobalt, Pacific Sapphire, Midnight Indigo, Emerald, and Graphite
