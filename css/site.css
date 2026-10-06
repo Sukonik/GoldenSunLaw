@@ -1026,3 +1026,104 @@ h3,
     grid-template-columns: minmax(0, 1fr) auto auto;
   }
 }
+
+
+/* ==========================================================================
+   SUN polish pass — sharper type + natural responsive imagery
+   ========================================================================== */
+
+html {
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.copy,
+.card__copy,
+.page-hero__copy,
+.location-card__description {
+  color: color-mix(in srgb, var(--ink) 82%, var(--paper));
+  line-height: 1.5;
+}
+
+.copy,
+.page-hero__copy {
+  max-width: 39rem;
+}
+
+.card__copy,
+.location-card__description {
+  font-size: 0.98rem;
+}
+
+.display {
+  letter-spacing: -0.082em;
+  line-height: 0.84;
+}
+
+.section-title {
+  letter-spacing: -0.058em;
+  line-height: 0.96;
+}
+
+.card__title {
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.eyebrow,
+.meta,
+.card__meta,
+.location-card__label {
+  letter-spacing: 0.105em;
+}
+
+.section--dark .copy,
+.section--dark .meta {
+  color: rgba(255,255,255,.74);
+}
+
+.location-card__media {
+  aspect-ratio: 3 / 2;
+  background: var(--stone);
+}
+
+.location-card--featured .location-card__media {
+  aspect-ratio: 16 / 9;
+}
+
+.location-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+  transform: none;
+  image-rendering: auto;
+  backface-visibility: hidden;
+}
+
+.location-card:hover .location-card__media img {
+  transform: none;
+  filter: none;
+}
+
+.location-card__body {
+  gap: .85rem;
+}
+
+.location-card__address {
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 1100px) {
+  .location-card--featured .location-card__media {
+    aspect-ratio: auto;
+    min-height: 30rem;
+  }
+}
