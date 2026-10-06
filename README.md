@@ -380,3 +380,46 @@ GitHub Pages / Actions deployment is enabled for rapid iteration.
 **SUN**  
 *Sun, Kim, Diamond & Goldman LLP*  
 **Technology. Real Estate. Capital. Infrastructure.**
+
+
+---
+
+## Implemented Site Foundation
+
+The first website build uses a lightweight static architecture:
+
+- Vanilla HTML, CSS, and JavaScript
+- No framework or package-install requirement
+- GitHub Pages friendly
+- Mobile-first responsive layout
+- Accessible skip links, focus states, and mobile navigation
+- Reduced-motion support
+- Shared design tokens and reusable card/grid patterns
+- A firm-profile switch for enterprise vs. solo/small-firm deployments
+
+### Small-Firm Mode
+
+Open `js/site-config.js` and change:
+
+```js
+profile: "enterprise"
+```
+
+to:
+
+```js
+profile: "small"
+```
+
+Small-firm mode removes enterprise-only navigation and sections, changes selected copy, and allows lawyer/practice/office grids to flow naturally for one or two attorneys.
+
+For a solo or two-lawyer deployment:
+
+1. Keep only the lawyer cards actually needed in `people.html`.
+2. Keep only the firm's real practice areas in `practices.html`.
+3. Replace the SUN brand values in `js/site-config.js`.
+4. Replace contact details and office copy in `about.html`.
+5. Leave Deals & Cases disabled unless the firm has appropriate public matters to feature.
+6. Add jurisdiction-specific attorney-advertising and professional-responsibility language before production use.
+
+The design intentionally remains credible without photography, so a small practice can launch a polished version before commissioning custom portraits or office imagery.
