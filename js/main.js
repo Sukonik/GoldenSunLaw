@@ -29,11 +29,14 @@
   }
 
   var THEMES = [
-    { id: "cobalt", label: "Hudson Cobalt", swatch: "linear-gradient(135deg,#061A33,#168BFF,#62C3FF)" },
-    { id: "pacific", label: "Pacific Sapphire", swatch: "linear-gradient(135deg,#031D2E,#00A7D8,#7DE3F2)" },
-    { id: "midnight", label: "Midnight Indigo", swatch: "linear-gradient(135deg,#080D22,#596DFF,#9DA9FF)" },
-    { id: "emerald", label: "Emerald", swatch: "linear-gradient(135deg,#071A16,#147A5A,#55D3A4)" },
-    { id: "graphite", label: "Graphite", swatch: "linear-gradient(135deg,#090B10,#343B47,#7F8A9A)" }
+    { id: "cobalt", label: "Cobalt", swatch: "linear-gradient(135deg,#061A33,#168BFF,#62C3FF)" },
+    { id: "lime", label: "Lime", swatch: "linear-gradient(135deg,#102312,#63B72D,#B8F34B)" },
+    { id: "rose", label: "Rose", swatch: "linear-gradient(135deg,#2B0A13,#B92E4A,#FF6B82)" },
+    { id: "lemon", label: "Lemon", swatch: "linear-gradient(135deg,#332A00,#D6A900,#FFE65B)" },
+    { id: "lavender", label: "Lavender", swatch: "linear-gradient(135deg,#1D1535,#7557D9,#C8B7FF)" },
+    { id: "dove", label: "Dove", swatch: "linear-gradient(135deg,#3E444C,#8B949E,#D7DCE2)" },
+    { id: "ivory", label: "Ivory", swatch: "linear-gradient(135deg,#786E57,#D8CFAE,#FFF9E9)" },
+    { id: "onyx", label: "Onyx", swatch: "linear-gradient(135deg,#050608,#1A1D22,#4B515B)" }
   ];
 
   function setTheme(theme) {
