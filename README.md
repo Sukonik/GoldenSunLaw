@@ -2,6 +2,9 @@
 
 ### Sun, Kim, Diamond & Goldman LLP
 
+**Review / Publish**  
+[Live GitHub Pages site](https://sukonik.github.io/GoldenSunLaw/) · [Homepage source: index.html](./index.html)
+
 **GoldenSunLaw** is a public reference implementation and reusable template for a premium international law firm website.
 
 SUN is a fictional global law firm created to explore how a modern legal brand can combine the institutional confidence of traditional BigLaw with a responsive, technology-forward digital experience.
@@ -176,7 +179,8 @@ West Coast technology, consumer products, investment, hospitality, and real esta
 ### Honolulu
 Hospitality, resort development, tourism, Asia-Pacific investment, and strategic real estate.
 
-### Clearwater / Tampa Bay
+### Clearwater · One Clearwater Tower
+**600 Cleveland St, Clearwater, FL 33755**  
 Florida real estate, hospitality, REIT, investment, and development platform.
 
 Additional markets may include **Tokyo, San Francisco, Singapore, and Miami** without initially presenting each as a formal office.
