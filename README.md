@@ -56,6 +56,7 @@ A New York real estate, hospitality, REIT, structured-finance, and infrastructur
 Illustrative fictional client relationships include:
 
 - **Hyatt Hotels Corporation**
+- **Wyndham Hotels & Resorts**
 - **American Tower Corporation**
 - **Simon Property Group**
 - **Digital Realty**
@@ -179,9 +180,9 @@ West Coast technology, consumer products, investment, hospitality, and real esta
 ### Honolulu
 Hospitality, resort development, tourism, Asia-Pacific investment, and strategic real estate.
 
-### Clearwater Beach · Mandalay Avenue
-**403B Mandalay Ave, Clearwater Beach, FL 33767**  
-Florida hospitality, resort development, real estate, REIT, investment, and coastal development platform.
+### Clearwater Beach · Wyndham Grand Clearwater Beach
+**100 Coronado Drive, Clearwater Beach, FL 33767**  
+Fictional SUN resident counsel suite focused on hospitality, resort development, real estate, REIT, investment, and coastal development.
 
 Additional markets may include **Tokyo, San Francisco, Singapore, and Miami** without initially presenting each as a formal office.
 
