@@ -442,7 +442,7 @@ to:
 profile: "small"
 ```
 
-Small-firm mode removes enterprise-only navigation and sections, changes selected copy, and allows lawyer/practice/office grids to flow naturally for one or two attorneys.
+Small-firm mode now provides a visibly different boutique preview: it removes enterprise-only navigation and matter sections, limits the demo to two lawyers and four practices, shows one primary office, swaps selected copy, and lets the grids breathe at smaller scale. A real deployment should still delete any unused lawyer, practice, and office content rather than relying only on the preview limits.
 
 For a solo or two-lawyer deployment:
 
