@@ -1333,3 +1333,44 @@ h1, h2, h3, .lede { text-wrap: balance; }
 @media (max-width: 639px) {
   .location-card__body { padding-inline: 1.25rem; }
 }
+
+
+/* ==========================================================================
+   Polish: link arrows + hamburger centering
+   ========================================================================== */
+
+/* The "↗" glyph renders as a colored emoji on some phones. Draw it instead,
+   so it always follows the link's text color. */
+.text-link::after {
+  content: "";
+  flex: none;
+  width: .85em;
+  height: .85em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='square'%3E%3Cpath d='M3 9L9 3M4 3h5v5'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='square'%3E%3Cpath d='M3 9L9 3M4 3h5v5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.text-link { color: var(--ink); }
+.hero .text-link { color: var(--hero-text); }
+.section--dark .text-link { color: var(--paper-strong); }
+
+/* Hamburger: one box, three 2px bars drawn as gradients, centered by flex */
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.nav-toggle__lines,
+.nav-toggle__lines::before,
+.nav-toggle__lines::after { content: none; }
+.nav-toggle__lines {
+  display: block;
+  position: static;
+  width: 20px;
+  height: 14px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) 0 0 / 100% 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 0 50% / 100% 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 0 100% / 100% 2px no-repeat;
+}
