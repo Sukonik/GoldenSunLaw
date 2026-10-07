@@ -1547,3 +1547,40 @@ html[data-theme="onyx"]     { --hero-scrim: 0; }
 
 /* About: closing thesis line under the merger story */
 .about-line { margin-top: clamp(2.5rem, 6vw, 4.5rem); max-width: 14ch; }
+
+
+/* ==========================================================================
+   SUN* identity: wordmark image (follows text color via mask), compass star
+   ========================================================================== */
+
+.wordmark {
+  display: block;
+  aspect-ratio: 1400 / 380;
+  background-color: currentColor;
+  -webkit-mask: url("../assets/brand/sun-wordmark-black.png") center / contain no-repeat;
+  mask: url("../assets/brand/sun-wordmark-black.png") center / contain no-repeat;
+}
+
+.brand { align-items: center; }
+.brand__mark.wordmark {
+  width: 8rem;
+  font-size: 0;
+  letter-spacing: 0;
+}
+
+.nav-drawer__top .brand__mark.wordmark { width: 9.5rem; }
+
+.wordmark--hero {
+  width: min(100%, 44rem);
+}
+.display:has(> .wordmark--hero) { line-height: 0; font-size: 0; }
+
+.site-footer__mark.wordmark {
+  width: min(100%, 30rem);
+  line-height: 0;
+  font-size: 0;
+}
+
+@media (max-width: 399px) {
+  .brand__mark.wordmark { width: 6.4rem; }
+}
