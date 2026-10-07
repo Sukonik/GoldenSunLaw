@@ -62,7 +62,8 @@
     toggle.type = "button";
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-controls", "theme-menu");
-    toggle.innerHTML = '<span class="theme-control__dot" aria-hidden="true"></span><span>Change Theme</span>';
+    toggle.setAttribute("aria-label", "Change theme");
+    toggle.innerHTML = '<span class="theme-control__dot" aria-hidden="true"></span><span class="theme-control__label theme-control__label--full">Change Theme</span><span class="theme-control__label theme-control__label--short" aria-hidden="true">Theme</span>';
 
     var menu = document.createElement("div");
     menu.className = "theme-menu";
