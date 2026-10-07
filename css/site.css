@@ -1374,3 +1374,27 @@ h1, h2, h3, .lede { text-wrap: balance; }
     linear-gradient(var(--ink), var(--ink)) 0 50% / 100% 2px no-repeat,
     linear-gradient(var(--ink), var(--ink)) 0 100% / 100% 2px no-repeat;
 }
+
+
+/* Close button: drawn X, centered in its box (the "×" glyph sits low and off-center) */
+.nav-drawer__close {
+  position: relative;
+  display: block;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+.nav-drawer__close::before,
+.nav-drawer__close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  margin: -1px 0 0 -10px;
+  background: var(--paper-strong);
+}
+.nav-drawer__close::before { transform: rotate(45deg); }
+.nav-drawer__close::after { transform: rotate(-45deg); }
