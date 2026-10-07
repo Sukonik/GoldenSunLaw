@@ -1,0 +1,126 @@
+<title>SUN Wordmark Directions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;500;600;700;800&family=Inter:wght@400;500&display=swap">
+<style>
+/* Layout: four directions as stacked specimen rows; each shows hero size, nav size, reversed, and legal-name lockup. */
+:root{
+  --ink:#11110f; --paper:#f4f1ea; --paper2:#fbfaf6; --muted:#6a655d; --line:rgba(17,17,15,.16);
+  --accent:#27384d; --sun:#b8862b; --rev-bg:#11110f; --rev-fg:#f4f1ea;
+  --display:"Inter Tight","Inter",Arial,sans-serif; --body:"Inter",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f1eee7;--paper:#14140f;--paper2:#1b1b15;--muted:#a39d92;--line:rgba(241,238,231,.18);--accent:#9fb4cc;--sun:#d9a441;--rev-bg:#f1eee7;--rev-fg:#14140f;color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#f1eee7;--paper:#14140f;--paper2:#1b1b15;--muted:#a39d92;--line:rgba(241,238,231,.18);--accent:#9fb4cc;--sun:#d9a441;--rev-bg:#f1eee7;--rev-fg:#14140f;color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);padding-inline:1rem;padding-block:2rem 4rem;line-height:1.5}
+main{max-width:64rem;margin-inline:auto}
+header{display:grid;gap:.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
+h1{font:700 clamp(1.6rem,4vw,2.4rem)/1.1 var(--display);letter-spacing:-.03em;margin:0;text-wrap:balance}
+header p{margin:0;max-width:42rem;color:var(--muted)}
+.dir{display:grid;gap:1rem;padding-block:2rem;border-bottom:1px solid var(--line)}
+.dir h2{font:600 1rem/1.3 var(--display);margin:0;letter-spacing:.01em}
+.dir .spec{font:.78rem/1.5 var(--body);color:var(--muted);margin:0;max-width:44rem}
+.row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1rem}
+@media(max-width:620px){.row{grid-template-columns:minmax(0,1fr)}}
+.stage{background:var(--paper2);border:1px solid var(--line);padding:1.5rem;display:grid;place-items:center;min-height:11rem;min-width:0;overflow:hidden}
+.stage.rev{background:var(--rev-bg);color:var(--rev-fg)}
+.small{display:grid;gap:1rem}
+.nav{display:flex;align-items:baseline;gap:.65rem;flex-wrap:wrap;justify-content:center}
+.nav .legal{font:400 .75rem var(--body);color:var(--muted)}
+.rev .nav .legal{color:inherit;opacity:.65}
+.w{font-family:var(--display);line-height:1;white-space:nowrap}
+.big{font-size:clamp(4rem,16vw,8.5rem)}
+.nm{font-size:2.1rem}
+/* A: Tight Black — the current site, refined */
+.A{font-weight:800;letter-spacing:-.085em}
+/* B: Open Caps — quiet, architectural */
+.B{font-weight:500;letter-spacing:.32em;margin-right:-.32em}
+.B.big{font-size:clamp(3rem,12vw,6.5rem)}
+.B.nm{font-size:1.5rem}
+/* C: Sun Dot — lowercase, disc replaces the tittle-less counter */
+.C{font-weight:700;letter-spacing:-.06em;text-transform:lowercase;position:relative;display:inline-block}
+.C .disc{display:inline-block;width:.2em;height:.2em;border-radius:50%;background:var(--sun);margin-left:.04em}
+/* D: Horizon — U carries a rising half sun */
+svg{max-width:100%;height:auto;display:block}
+svg text{font-family:var(--display)}
+.note{font-size:.85rem;color:var(--muted);max-width:44rem;margin:0}
+footer{padding-top:2rem;display:grid;gap:.5rem}
+footer h2{font:600 1rem var(--display);margin:0}
+footer ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.9rem}
+</style>
+<main>
+<header>
+  <h1>SUN wordmark: four directions</h1>
+  <p>All four use Inter Tight as the base so the mark stays in the same family as the site. Each is shown at hero size, at nav size beside the legal name, and reversed. Switch your system theme to check both grounds.</p>
+</header>
+
+<section class="dir">
+  <h2>A. Tight Black</h2>
+  <p class="spec">Inter Tight 800, tracking −0.085em. This is what the site uses today, so it is the baseline. Dense, confident, reads as a firm stamp. Risk: at 320px the letters nearly touch.</p>
+  <div class="row">
+    <div class="stage"><span class="w A big">SUN</span></div>
+    <div class="small">
+      <div class="stage"><span class="nav"><span class="w A nm">SUN</span><span class="legal">Sun, Kim, Diamond &amp; Goldman LLP</span></span></div>
+      <div class="stage rev"><span class="w A nm">SUN</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="dir">
+  <h2>B. Open Caps</h2>
+  <p class="spec">Inter Tight 500, tracking +0.32em. Opens the letters up and drops the weight. Feels like a name on a building, closer to a traditional law firm. Scales down without crowding the theme button on phones.</p>
+  <div class="row">
+    <div class="stage"><span class="w B big">SUN</span></div>
+    <div class="small">
+      <div class="stage"><span class="nav"><span class="w B nm">SUN</span><span class="legal">Sun, Kim, Diamond &amp; Goldman LLP</span></span></div>
+      <div class="stage rev"><span class="w B nm">SUN</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="dir">
+  <h2>C. Sun Dot</h2>
+  <p class="spec">Inter Tight 700 lowercase, with a solid gold disc as a full stop. The sun is the only color in the mark, so it can be dropped into the Locations cards and favicon on its own. Friendlier, less formal.</p>
+  <div class="row">
+    <div class="stage"><span class="w C big">sun<span class="disc"></span></span></div>
+    <div class="small">
+      <div class="stage"><span class="nav"><span class="w C nm">sun<span class="disc"></span></span><span class="legal">Sun, Kim, Diamond &amp; Goldman LLP</span></span></div>
+      <div class="stage rev"><span class="w C nm">sun<span class="disc"></span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="dir">
+  <h2>D. Horizon</h2>
+  <p class="spec">Inter Tight 800 caps with the U's counter filled by a half disc, so the letter reads as a horizon with the sun rising in it. The most ownable of the four and the one that needs a drawn U, so it should be built as an SVG with outlined letters before it ships.</p>
+  <div class="row">
+    <div class="stage">
+      <svg viewBox="0 0 330 120" width="420" role="img" aria-label="SUN with a rising sun in the U">
+        <text x="0" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">S</text>
+        <text x="86" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">U</text>
+        <path d="M118 62 a20 20 0 0 1 40 0 z" fill="var(--sun)"/>
+        <text x="186" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">N</text>
+      </svg>
+    </div>
+    <div class="small">
+      <div class="stage"><svg viewBox="0 0 330 120" width="120" role="img" aria-label="SUN">
+        <text x="0" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">S</text>
+        <text x="86" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">U</text>
+        <path d="M118 62 a20 20 0 0 1 40 0 z" fill="var(--sun)"/>
+        <text x="186" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">N</text></svg></div>
+      <div class="stage rev"><svg viewBox="0 0 330 120" width="120" role="img" aria-label="SUN reversed">
+        <text x="0" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">S</text>
+        <text x="86" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">U</text>
+        <path d="M118 62 a20 20 0 0 1 40 0 z" fill="var(--sun)"/>
+        <text x="186" y="104" font-size="120" font-weight="800" letter-spacing="-8" fill="currentColor">N</text></svg></div>
+    </div>
+  </div>
+  <p class="note">The half disc position is a rough placement over the live text. A final version needs the U outlined and the disc centered on its counter.</p>
+</section>
+
+<footer>
+  <h2>Recommendation</h2>
+  <ul>
+    <li>Start with B or D. B is the safest fit beside the legal name; D is the one people will remember.</li>
+    <li>A and C stay in the pool only if the firm wants a louder or warmer tone.</li>
+    <li>Whichever wins, hand Cole one SVG plus a favicon crop, so he swaps one asset and does not touch the responsive work.</li>
+  </ul>
+</footer>
+</main>
