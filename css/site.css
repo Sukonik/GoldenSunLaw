@@ -1584,3 +1584,72 @@ html[data-theme="onyx"]     { --hero-scrim: 0; }
 @media (max-width: 399px) {
   .brand__mark.wordmark { width: 6.4rem; }
 }
+
+
+/* ==========================================================================
+   Small profile — Will Sun / Seoul-led boutique preview
+   ========================================================================== */
+
+html[data-firm-profile="small"] .small-profile-location {
+  display: block;
+}
+
+html:not([data-firm-profile="small"]) .small-profile-location {
+  display: none;
+}
+
+html[data-firm-profile="small"] .people-grid {
+  grid-template-columns: minmax(0, min(100%, 32rem));
+  background: transparent;
+  border: 0;
+}
+
+html[data-firm-profile="small"] .people-grid .person-card {
+  min-height: 18rem;
+  border: 1px solid var(--line);
+}
+
+html[data-firm-profile="small"] .practice-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+html[data-firm-profile="small"] .location-gallery {
+  grid-template-columns: 1fr;
+}
+
+html[data-firm-profile="small"] .location-card--small-featured {
+  grid-column: 1 / -1;
+}
+
+html[data-firm-profile="small"] .location-card--small-featured .location-card__media {
+  aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 760px) {
+  html[data-firm-profile="small"] .location-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  html[data-firm-profile="small"] .location-card--small-featured {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1100px) {
+  html[data-firm-profile="small"] .location-card--small-featured {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+  }
+
+  html[data-firm-profile="small"] .location-card--small-featured .location-card__media {
+    aspect-ratio: auto;
+    min-height: 28rem;
+  }
+
+  html[data-firm-profile="small"] .location-card--small-featured .location-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+  }
+}

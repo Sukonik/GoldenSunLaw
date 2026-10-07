@@ -423,12 +423,12 @@ The first website build uses a lightweight static architecture:
 
 ### Small-Firm Mode
 
-Live preview links:
+### Preview Options
 
-- [Enterprise profile](https://sukonik.github.io/GoldenSunLaw/?profile=enterprise)
-- [Small-firm profile](https://sukonik.github.io/GoldenSunLaw/?profile=small)
+- [Enterprise profile](https://sukonik.github.io/GoldenSunLaw/?profile=enterprise) — full fictional SUN platform.
+- [Small-firm profile](https://sukonik.github.io/GoldenSunLaw/?profile=small) — a deliberately different boutique preview built around **Will Sun only**, with **Seoul / Parc.1 Tower 1 as Asia-Pacific headquarters** and **Los Angeles + Honolulu** as the supporting offices.
 
-The query-string preview does not change the production default; it only overrides the profile for that browser load.
+The query-string preview does not change the production default. It only overrides the profile for that browser load, so the same codebase can demonstrate both an international multi-partner firm and a focused one-lawyer practice.
 
 Open `js/site-config.js` and change:
 
@@ -442,7 +442,7 @@ to:
 profile: "small"
 ```
 
-Small-firm mode removes enterprise-only navigation and sections, changes selected copy, and allows lawyer/practice/office grids to flow naturally for one or two attorneys.
+Small-firm mode is a preview configuration rather than the production default. The current demo shows Will Sun as the sole lawyer, Seoul as headquarters, and Los Angeles and Honolulu as the supporting offices; enterprise-only matters, client strips, and other large-firm content are suppressed.
 
 For a solo or two-lawyer deployment:
 
