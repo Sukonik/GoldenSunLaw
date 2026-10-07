@@ -9,6 +9,15 @@
   document.querySelectorAll("[data-brand]").forEach(function (el) {
     el.textContent = config.brand || "LAW";
   });
+  // The SUN* wordmark is an image. A reused template with another brand name falls back to text.
+  if (config.brand && config.brand !== "SUN") {
+    document.querySelectorAll("[data-wordmark]").forEach(function (el) {
+      el.classList.remove("wordmark", "wordmark--hero");
+      el.removeAttribute("role");
+      el.removeAttribute("aria-label");
+      el.textContent = config.brand;
+    });
+  }
   document.querySelectorAll("[data-legal-name]").forEach(function (el) {
     el.textContent = config.legalName || "Law Firm LLP";
   });
