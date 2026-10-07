@@ -41,14 +41,14 @@
     // Small-profile preview: a Seoul-led, one-lawyer technology boutique.
     // The enterprise profile remains the production default.
     document.querySelectorAll(".people-grid").forEach(function (grid) {
-      Array.from(grid.children).forEach(function (card, index) {
-        if (index > 0) card.hidden = true;
+      Array.from(grid.children).slice(1).forEach(function (card) {
+        card.remove();
       });
     });
 
     document.querySelectorAll(".practice-grid").forEach(function (grid) {
-      Array.from(grid.children).forEach(function (card, index) {
-        if (index > 3) card.hidden = true;
+      Array.from(grid.children).slice(4).forEach(function (card) {
+        card.remove();
       });
     });
 
@@ -116,11 +116,17 @@
       if (gallery) {
         gallery.hidden = false;
         var cards = Array.from(gallery.querySelectorAll(".location-card"));
-        cards.forEach(function (card, index) {
-          card.hidden = ![1, 2, 3].includes(index);
+        cards.forEach(function (card) {
+          var city = (card.querySelector(".location-card__city") || {}).textContent || "";
+          var keep = /Seoul|Los Angeles|Honolulu/i.test(city);
+          if (!keep) {
+            card.remove();
+            return;
+          }
+          card.hidden = false;
           card.classList.remove("location-card--small-featured");
+          if (/Seoul/i.test(city)) card.classList.add("location-card--small-featured");
         });
-        if (cards[1]) cards[1].classList.add("location-card--small-featured");
       }
     }
   }
