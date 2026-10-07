@@ -125,6 +125,33 @@
     }
   }
 
+
+  // Keep profile preview state when navigating between pages.
+  // Without this, clicking People/Practices/Locations silently falls back to enterprise.
+  (function preserveProfilePreviewLinks() {
+    var requestedProfile = null;
+    try {
+      requestedProfile = new URLSearchParams(window.location.search).get("profile");
+    } catch (e) {}
+
+    if (requestedProfile !== "small" && requestedProfile !== "enterprise") return;
+
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      var rawHref = link.getAttribute("href");
+      if (!rawHref || rawHref.charAt(0) === "#" || /^(mailto:|tel:|javascript:)/i.test(rawHref)) return;
+
+      try {
+        var target = new URL(rawHref, window.location.href);
+        if (target.origin !== window.location.origin) return;
+
+        target.searchParams.set("profile", requestedProfile);
+
+        // Keep project-relative links readable instead of replacing them with absolute URLs.
+        link.setAttribute("href", target.pathname.split("/").pop() + target.search + target.hash);
+      } catch (e) {}
+    });
+  })();
+
   var THEMES = [
     { id: "cobalt", label: "Cobalt", swatch: "linear-gradient(135deg,#061A33,#168BFF,#62C3FF)" },
     { id: "lime", label: "Lime", swatch: "linear-gradient(135deg,#102312,#63B72D,#B8F34B)" },

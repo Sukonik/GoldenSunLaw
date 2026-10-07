@@ -1653,3 +1653,53 @@ html[data-firm-profile="small"] .location-card--small-featured .location-card__m
     padding: 3rem;
   }
 }
+
+
+/* ==========================================================================
+   Small profile hard guardrails
+   The preview is intentionally a one-lawyer, three-office boutique.
+   ========================================================================== */
+
+html[data-firm-profile="small"] .people-grid > .person-card:not(:first-child) {
+  display: none !important;
+}
+
+html[data-firm-profile="small"] .practice-grid > .practice-card:nth-child(n + 5) {
+  display: none !important;
+}
+
+html[data-firm-profile="small"] section[aria-labelledby="featured-heading"] {
+  display: none !important;
+}
+
+html[data-firm-profile="small"] .location-gallery > .location-card:first-child,
+html[data-firm-profile="small"] .location-gallery > .location-card:nth-child(n + 5) {
+  display: none !important;
+}
+
+html[data-firm-profile="small"] .location-gallery > .location-card:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+html[data-firm-profile="small"] .location-gallery > .location-card:nth-child(2) .location-card__media {
+  aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 1100px) {
+  html[data-firm-profile="small"] .location-gallery > .location-card:nth-child(2) {
+    display: grid !important;
+    grid-template-columns: 1.15fr .85fr;
+  }
+
+  html[data-firm-profile="small"] .location-gallery > .location-card:nth-child(2) .location-card__media {
+    aspect-ratio: auto;
+    min-height: 28rem;
+  }
+
+  html[data-firm-profile="small"] .location-gallery > .location-card:nth-child(2) .location-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+  }
+}
