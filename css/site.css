@@ -1544,3 +1544,6 @@ html[data-theme="onyx"]     { --hero-scrim: 0; }
 @media (min-width: 920px) {
   .nav-toggle { display: none; }
 }
+
+/* About: closing thesis line under the merger story */
+.about-line { margin-top: clamp(2.5rem, 6vw, 4.5rem); max-width: 14ch; }
