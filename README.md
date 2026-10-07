@@ -423,6 +423,13 @@ The first website build uses a lightweight static architecture:
 
 ### Small-Firm Mode
 
+Live preview links:
+
+- [Enterprise profile](https://sukonik.github.io/GoldenSunLaw/?profile=enterprise)
+- [Small-firm profile](https://sukonik.github.io/GoldenSunLaw/?profile=small)
+
+The query-string preview does not change the production default; it only overrides the profile for that browser load.
+
 Open `js/site-config.js` and change:
 
 ```js
