@@ -119,6 +119,15 @@
 
   installThemePicker();
 
+  // Mark the current page in the header nav and the mobile drawer.
+  (function markCurrentPage() {
+    var here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    document.querySelectorAll(".nav__link, .nav-drawer__link").forEach(function (link) {
+      var target = (link.getAttribute("href") || "").split("#")[0].toLowerCase();
+      if (target && target === here) link.setAttribute("aria-current", "page");
+    });
+  })();
+
   var toggle = document.querySelector(".nav-toggle");
   var drawer = document.querySelector(".nav-drawer");
   var closeBtn = document.querySelector(".nav-drawer__close");
@@ -127,11 +136,11 @@
     if (!toggle || !drawer) return;
     toggle.setAttribute("aria-expanded", String(open));
     drawer.hidden = !open;
+    if (!drawer.hasAttribute("tabindex")) drawer.setAttribute("tabindex", "-1");
     drawer.dataset.open = String(open);
     document.body.classList.toggle("drawer-open", open);
     if (open) {
-      var first = drawer.querySelector("a");
-      if (first) first.focus();
+      drawer.focus({ preventScroll: true });
     }
   }
 

@@ -1398,3 +1398,149 @@ h1, h2, h3, .lede { text-wrap: balance; }
 }
 .nav-drawer__close::before { transform: rotate(45deg); }
 .nav-drawer__close::after { transform: rotate(-45deg); }
+
+
+/* ==========================================================================
+   Mobile drawer as a server rack: each page is a rack unit with a status LED.
+   The current page reads "ONLINE" with a lit LED and a lit faceplate.
+   ========================================================================== */
+
+.nav-drawer:focus { outline: none; }
+
+.nav-drawer__list {
+  counter-reset: unit;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.025);
+}
+.nav-drawer__list > li { counter-increment: unit; }
+.nav-drawer__list > li + li { border-top: 1px solid rgba(255,255,255,.14); }
+
+.nav-drawer__link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.25rem;
+  padding: .4rem 1.1rem;
+  border-bottom: 0;
+  font-size: clamp(1.7rem, 7.6vw, 3rem);
+  letter-spacing: -.03em;
+  /* ventilated faceplate on the right edge */
+  background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.055) 0 2px, transparent 2px 8px);
+  background-size: 5.5rem 100%;
+  background-position: right center;
+  background-repeat: no-repeat;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* status LED */
+.nav-drawer__link::before {
+  content: "";
+  width: .65rem;
+  height: .65rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.14);
+}
+
+/* unit label */
+.nav-drawer__link::after {
+  content: "U" counter(unit, decimal-leading-zero);
+  font-family: var(--sans);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255,255,255,.5);
+}
+
+.nav-drawer__link:active { background-color: rgba(255,255,255,.07); }
+
+.nav-drawer__link[aria-current="page"] {
+  background-color: transparent;
+  background-image:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent-strong) 38%, transparent), color-mix(in srgb, var(--accent-strong) 6%, transparent)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 2px, transparent 2px 8px);
+  background-size: 100% 100%, 5.5rem 100%;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  box-shadow: inset 3px 0 0 var(--accent-light);
+}
+.nav-drawer__link[aria-current="page"]::before {
+  background: var(--accent-light);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-light) 24%, transparent), 0 0 14px var(--accent-light);
+  animation: rack-led 2.4s ease-in-out infinite;
+}
+.nav-drawer__link[aria-current="page"]::after {
+  content: "Online";
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+.nav-drawer__link:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: -4px;
+}
+
+@keyframes rack-led {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-drawer__link[aria-current="page"]::before { animation: none; }
+}
+
+
+/* ==========================================================================
+   Theme contrast pass: readable text in all eight themes
+   ========================================================================== */
+
+html[data-theme="lime"]  { --accent-text: #3a7d17; }
+html[data-theme="lemon"] { --accent-text: #7d6100; }
+html[data-theme="ivory"] { --accent-text: #6f6443; }
+html[data-theme="dove"]  { --muted: #5d656e; }
+.location-card__label { color: var(--accent-text, var(--accent)); }
+
+/* Muted greys are tuned for light paper; use a light tint on dark sections */
+.section--dark .card__meta,
+.section--dark .meta,
+.section--dark .detail-row__label,
+.section--dark .practice-card__index { color: rgba(255,255,255,.72); }
+
+/* Hero scrim: a dark veil under the hero text so white copy holds contrast on
+   the bright end of every gradient. Strength is set per theme. */
+:root { --hero-scrim: .46; }
+html[data-theme="lime"]     { --hero-scrim: .66; }
+html[data-theme="rose"]     { --hero-scrim: .32; }
+html[data-theme="lemon"]    { --hero-scrim: .72; }
+html[data-theme="lavender"] { --hero-scrim: .4; }
+html[data-theme="dove"]     { --hero-scrim: .7; }
+html[data-theme="ivory"]    { --hero-scrim: .82; }
+html[data-theme="onyx"]     { --hero-scrim: 0; }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--ink) calc(var(--hero-scrim) * 95%), transparent) 0%,
+    color-mix(in srgb, var(--ink) calc(var(--hero-scrim) * 100%), transparent) 100%);
+}
+.hero { --hero-muted: color-mix(in srgb, var(--hero-text) 90%, transparent); }
+@media (min-width: 768px) {
+  .hero::before {
+    background: linear-gradient(90deg,
+      color-mix(in srgb, var(--ink) calc(var(--hero-scrim) * 100%), transparent) 0%,
+      color-mix(in srgb, var(--ink) calc(var(--hero-scrim) * 80%), transparent) 55%,
+      color-mix(in srgb, var(--ink) calc(var(--hero-scrim) * 100%), transparent) 100%);
+  }
+}
+
+/* The flex display set on .nav-toggle for centering must not show it on desktop */
+@media (min-width: 920px) {
+  .nav-toggle { display: none; }
+}
