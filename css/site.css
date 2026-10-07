@@ -490,7 +490,50 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
   outline-offset: 3px;
 }
 
-html[data-firm-profile="small"] [data-enterprise-only] { display: none !important; }
+html[data-firm-profile="small"] [data-enterprise-only],
+html[data-firm-profile="small"] [data-small-hide] { display: none !important; }
+
+/* Small-firm profile deliberately demonstrates boutique density.
+   Content can still be trimmed further in HTML for a real deployment. */
+html[data-firm-profile="small"] .people-grid > :nth-child(n + 3) {
+  display: none;
+}
+
+html[data-firm-profile="small"] .practice-grid > :nth-child(n + 5) {
+  display: none;
+}
+
+html[data-firm-profile="small"] .location-gallery {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+html[data-firm-profile="small"] .location-gallery > .location-card:nth-child(n + 2) {
+  display: none;
+}
+
+html[data-firm-profile="small"] .location-card--featured {
+  grid-column: auto;
+  display: block;
+}
+
+html[data-firm-profile="small"] .location-card--featured .location-card__media {
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+}
+
+html[data-firm-profile="small"] .location-card--featured .location-card__body {
+  display: grid;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+}
+
+html[data-firm-profile="small"] .section-title {
+  max-width: 15ch;
+}
+
+html[data-firm-profile="small"] .page-hero__copy,
+html[data-firm-profile="small"] .copy {
+  max-width: 34rem;
+}
 html[data-firm-profile="small"] .people-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
 html[data-firm-profile="small"] .practice-grid,
 html[data-firm-profile="small"] .matter-grid,
