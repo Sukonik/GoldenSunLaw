@@ -22,7 +22,9 @@
     el.textContent = config.legalName || "Law Firm LLP";
   });
   document.querySelectorAll("[data-primary-office]").forEach(function (el) {
-    el.textContent = config.primaryOffice || "";
+    el.textContent = profile === "small"
+      ? (config.smallPrimaryOffice || config.primaryOffice || "")
+      : (config.primaryOffice || "");
   });
   document.querySelectorAll("[data-short-line]").forEach(function (el) {
     el.textContent = config.shortLine || "";
@@ -35,6 +37,92 @@
     document.querySelectorAll("[data-small-copy]").forEach(function (el) {
       if (el.dataset.smallCopy) el.textContent = el.dataset.smallCopy;
     });
+
+    // Small-profile preview: a Seoul-led, one-lawyer technology boutique.
+    // The enterprise profile remains the production default.
+    document.querySelectorAll(".people-grid").forEach(function (grid) {
+      Array.from(grid.children).forEach(function (card, index) {
+        if (index > 0) card.hidden = true;
+      });
+    });
+
+    document.querySelectorAll(".practice-grid").forEach(function (grid) {
+      Array.from(grid.children).forEach(function (card, index) {
+        if (index > 3) card.hidden = true;
+      });
+    });
+
+    var featuredHeading = document.getElementById("featured-heading");
+    if (featuredHeading) {
+      var featuredSection = featuredHeading.closest("section");
+      if (featuredSection) featuredSection.hidden = true;
+    }
+
+    var peopleHeading = document.getElementById("people-heading");
+    if (peopleHeading) peopleHeading.textContent = "Will Sun";
+
+    var heroStatement = document.querySelector(".hero__statement .lede");
+    if (heroStatement) {
+      heroStatement.textContent = "Cross-border technology counsel from Seoul to the Pacific.";
+    }
+
+    var heroTopline = document.querySelector(".hero__topline");
+    if (heroTopline && !heroTopline.querySelector(".small-profile-location")) {
+      var smallOffice = document.createElement("p");
+      smallOffice.className = "hero__location small-profile-location";
+      smallOffice.innerHTML = "Asia-Pacific Headquarters<br><span>Parc.1 Tower 1 · Seoul</span>";
+      heroTopline.appendChild(smallOffice);
+    }
+
+    var peoplePageHero = document.querySelector("body .page-hero .section-title");
+    if (peoplePageHero && /People/i.test(document.title)) {
+      peoplePageHero.textContent = "Will Sun";
+    }
+
+    if (/People/i.test(document.title)) {
+      document.querySelectorAll(".section--dark").forEach(function (section) {
+        if (section.textContent.indexOf("One lawyer or one hundred") !== -1) section.hidden = true;
+      });
+    }
+
+    if (/About/i.test(document.title)) {
+      var aboutCopy = document.querySelector(".page-hero__copy");
+      if (aboutCopy) {
+        aboutCopy.textContent = "Will Sun leads a Seoul-headquartered cross-border technology practice focused on AI infrastructure, semiconductors, venture capital, transactions, and market expansion.";
+      }
+      var combination = Array.from(document.querySelectorAll("main > .section")).find(function (section) {
+        return section.textContent.indexOf("Sun & Kim understood the technology") !== -1;
+      });
+      if (combination) combination.hidden = true;
+    }
+
+    if (/Locations/i.test(document.title)) {
+      var locationHeroCopy = document.querySelector(".page-hero__copy");
+      if (locationHeroCopy) {
+        locationHeroCopy.textContent = "A Seoul-headquartered technology practice with West Coast and Pacific reach.";
+      }
+
+      var locationsIntro = document.querySelector(".locations-intro");
+      if (locationsIntro) {
+        var introEyebrow = locationsIntro.querySelector(".eyebrow");
+        var introTitle = locationsIntro.querySelector(".section-title");
+        var introCopy = locationsIntro.querySelector(".copy");
+        if (introEyebrow) introEyebrow.textContent = "Asia-Pacific platform";
+        if (introTitle) introTitle.textContent = "Seoul at the center. Pacific reach.";
+        if (introCopy) introCopy.textContent = "Seoul serves as headquarters, with Los Angeles and Honolulu extending the practice across the West Coast and Pacific.";
+      }
+
+      var gallery = document.querySelector(".location-gallery");
+      if (gallery) {
+        gallery.hidden = false;
+        var cards = Array.from(gallery.querySelectorAll(".location-card"));
+        cards.forEach(function (card, index) {
+          card.hidden = ![1, 2, 3].includes(index);
+          card.classList.remove("location-card--small-featured");
+        });
+        if (cards[1]) cards[1].classList.add("location-card--small-featured");
+      }
+    }
   }
 
   var THEMES = [

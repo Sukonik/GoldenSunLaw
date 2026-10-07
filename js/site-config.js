@@ -15,7 +15,7 @@ window.LAW_SITE_CONFIG = {
   /*
    * profile controls progressive disclosure:
    * "enterprise" = multi-lawyer / multi-office / matters + industries
-   * "small"      = solo / two-lawyer friendly navigation and density
+   * "small"      = Will Sun / Seoul-led boutique preview
    *
    * Preview either mode without changing the production default:
    * ?profile=small
@@ -26,6 +26,7 @@ window.LAW_SITE_CONFIG = {
   legalName: "Sun, Kim, Diamond & Goldman LLP",
   shortLine: "Technology. Real Estate. Capital. Infrastructure.",
   primaryOffice: "10 Hudson Yards · New York",
+  smallPrimaryOffice: "Parc.1 Tower 1 · Seoul",
   contactEmail: "contact@example.com",
   defaultTheme: "cobalt"
 };
