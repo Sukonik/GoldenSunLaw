@@ -1,7 +1,8 @@
-"""Render the SUN pearl home-screen icon set from assets/brand/sun-compass-star-black.png.
+"""Render the studio pearl icon set (an alternate to the supplied Pearl Compass Star set) from
+assets/brand/sun-compass-star-black.png.
 
 Usage: python3 tools/generate-icons.py   (needs numpy and Pillow)
-Outputs go to assets/icons/ plus favicon.ico at the repo root.
+Outputs go to assets/icons/studio/.
 """
 import os
 import numpy as np
@@ -116,7 +117,7 @@ def save(arr, path, px, rounded=False):
 
 
 def main():
-    icons = os.path.join(ROOT, 'assets/icons')
+    icons = os.path.join(ROOT, 'assets/icons/studio')
     os.makedirs(icons, exist_ok=True)
     full = compose(scale=.60)          # iOS / favicon: star fills the tile
     safe = compose(scale=.46)          # Android maskable: star stays inside the 80% safe zone
@@ -128,8 +129,6 @@ def main():
     # small sizes: a bolder star reads better at 16 to 48px
     small = compose(scale=.70)
     ico = [save(small, os.path.join(icons, 'favicon-%d.png' % s), s, rounded=True) for s in (32, 48)]
-    Image.open(os.path.join(icons, 'favicon-48.png')).save(
-        os.path.join(ROOT, 'favicon.ico'), sizes=[(16, 16), (32, 32), (48, 48)])
     print('ok')
 
 
